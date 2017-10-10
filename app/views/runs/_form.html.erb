@@ -1,0 +1,15 @@
+<%= simple_form_for @run do |form| %>
+  <% if @run.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@run.errors.count, "error") %> prohibited this import from being saved:</h2>
+
+      <ul>
+      <% @run.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.input :gpx, as: :file %>
+  <%= form.button :submit %>
+<% end %>
